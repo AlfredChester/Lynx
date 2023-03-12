@@ -18,9 +18,9 @@ print('Problem Root:', root)
 moduleRoot = root.replace('/', '.')
 try:
     Config = import_module(moduleRoot + '.Config')
-except Exception:
+except FileNotFoundError:
     if 'gen.py' in listdir(f'./{moduleRoot}'):
-        print('Old generater found, running...')
+        print('Old generator found, running...')
         system(f'python3 ./{moduleRoot}/gen.py')
     else:
         print('No Config.py or gen.py found, please check the directory')
@@ -57,10 +57,10 @@ def main() -> int:
         )
         # Gen Data 
         if Config.version.split('.')[0] == '1':
-            file.input_write(Config.generater(textGroup))
+            file.input_write(Config.generator(textGroup))
         else:
-            ret = Config.Gen.generater(textGroup, file)
-            if ret != None:
+            ret = Config.Gen.generator(textGroup, file)
+            if ret is not None:
                 file.input_write(ret)   
         # Gen Output
         if not useConfigGen:
