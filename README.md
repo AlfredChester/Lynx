@@ -1,8 +1,8 @@
-# Testdata-Generater
+# Testdata-Generator
 
-A testdata generator respository
+A testdata generator repository
 
-### 1. Testdata Generater
+### 1. Testdata Generator
 
 First, you need to create a folder to save all the files needed for a problem, for example, I created `generator_example\`
 
@@ -16,19 +16,19 @@ generator_example\
   |- std.cpp
 ```
 
-In `Config.py`, you need to rewrite the method Gen.generater, It should do one of the two things:
+In `Config.py`, you need to rewrite the method Gen.generator, It should do one of the two things:
 
     1) Return a str with testdata, for example:
 
 ```python
-def generater(data_group: int, io: IO) -> str: 
+def generator(data_group: int, io: IO) -> str: 
         return '114514'
 ```
 
     2) Write testdata to io (which is recommended), for example:
 
 ```python
-def generater(data_group: int, io: IO) -> None: 
+def generator(data_group: int, io: IO) -> None: 
         a = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
         b = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
         io.input_writeln(a, b)
