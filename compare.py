@@ -4,7 +4,7 @@ from importlib import import_module
 
 from cyaron import *
 
-print('Usage: python compare {Data Generator} {program1} {program2}')
+print('Usage: python compare.py {Data Generator} {program1} {program2}')
 print(f'Argv: {argv}')
 try:
     root = argv[1]
@@ -34,7 +34,7 @@ except Exception:
 print('Read Config v' + Config.version)
 
 def compileCpp(name : str) -> int:
-    cmd = f"g++ -O2 -std=c++14 -Wall -o {name}.exe {name}"
+    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {name}.exe {name}"
     print("Compile cmd: ", cmd)
     return system(cmd)
 
