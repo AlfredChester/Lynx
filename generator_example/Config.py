@@ -28,7 +28,7 @@ class Gen:
     #  param: data_group -> which data is being generated
     #  directly write input data to io
     #  See https://github.com/luogu-dev/cyaron/wiki/输入输出-IO
-    def generater(data_group: int, io: IO) -> None: 
+    def generator(data_group: int, io: IO) -> None:
         a = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
         b = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
         io.input_writeln(a, b)
