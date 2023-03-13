@@ -44,7 +44,7 @@ def compile_source() -> int:
     return system(cmd)
 
 
-def main() -> int:
+def main(*args, **kwargs) -> int:
     if not useConfigGen:
         retval = compile_source()
         if retval != 0:
@@ -53,8 +53,7 @@ def main() -> int:
     for textGroup in range(1, Config.data_set + 1):
         # IO Object Creation
         file = IO(
-            file_prefix = root + '/',
-            data_id = textGroup
+            file_prefix=root + '/', data_id=textGroup
         )
         # Gen Data 
         if Config.version.split('.')[0] == '1':
