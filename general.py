@@ -28,11 +28,10 @@ except FileNotFoundError:
 
 print('Read Config v' + Config.version)
 
-useConfigGen = False
 try:
     useConfigGen = Config.genOut
 except AttributeError:
-    pass
+    useConfigGen = False
 
 zipName = root.split('/')[-1] + '.zip'
 zipFile = ZipFile(root + '/' + zipName, 'w')
