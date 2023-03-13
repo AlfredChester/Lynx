@@ -1,6 +1,7 @@
 # Testdata-Generator
 
-A testdata generator repository
+A testdata generator repository powered by 
+<a href="https://github.com/luogu-dev/cyaron/">Cyaron</a>
 
 ### 1. Testdata Generator
 
@@ -16,22 +17,29 @@ generator_example\
   |- std.cpp
 ```
 
-In `Config.py`, you need to rewrite the method Gen.generator, It should do one of the two things:
+In `Config.py`, you need to rewrite the method `Gen.generator`, It should do one of the two things:
 
     1) Return a str with testdata, for example:
 
 ```python
-
-def generator(data_group: int, io: IO) -> str: 
+from cyaron import *
+class Gen:
+    @staticmethod
+    def generator(data_group: int, io: IO) -> str: 
         return '114514'
 ```
 
     2) Write testdata to io (which is recommended), for example:
 
 ```python
-def generator(data_group: int, io: IO) -> None: 
-        a = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
-        b = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
+from cyaron import *
+from libs.glib import ToolSet
+
+class Gen:
+    @staticmethod
+    def generator(data_group: int, io: IO) -> None: 
+        a = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
+        b = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         io.input_writeln(a, b)
 ```
 
