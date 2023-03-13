@@ -31,21 +31,23 @@ print('Read Config v' + Config.version)
 useConfigGen = False
 try:
     useConfigGen = Config.genOut
-except Exception:
+except AttributeError:
     pass
 
 zipName = root.split('/')[-1] + '.zip'
 zipFile = ZipFile(root + '/' + zipName, 'w')
 
-def compileCpp() -> int:
-    realCpp = root + '/' + Config.std_name
-    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {root}/std.exe {realCpp}"
+
+def compile_source() -> int:
+    real_cpp = root + '/' + Config.std_name
+    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {root}/std.exe {real_cpp}"
     print("Compile cmd: ", cmd)
     return system(cmd)
 
+
 def main() -> int:
     if not useConfigGen:
-        retval = compileCpp()
+        retval = compile_source()
         if retval != 0:
             print('Compile Failure')
             return 0
@@ -61,21 +63,22 @@ def main() -> int:
         else:
             ret = Config.Gen.generator(textGroup, file)
             if ret is not None:
-                file.input_write(ret)   
-        # Gen Output
+                file.input_write(ret)
+                # Gen Output
         if not useConfigGen:
             file.output_gen(f'{root}/std.exe')
         print(f'Generated Testcase {textGroup}')
         zipFile.write(
-            f'{root}/{textGroup}.in', arcname = f'{textGroup}.in', 
-            compress_type = ZIP_DEFLATED, compresslevel = 9
+            f'{root}/{textGroup}.in', arcname=f'{textGroup}.in',
+            compress_type=ZIP_DEFLATED, compresslevel=9
         )
         zipFile.write(
-            f'{root}/{textGroup}.out', arcname = f'{textGroup}.out', 
-            compress_type = ZIP_DEFLATED, compresslevel = 9
+            f'{root}/{textGroup}.out', arcname=f'{textGroup}.out',
+            compress_type=ZIP_DEFLATED, compresslevel=9
         )
     zipFile.close()
     return 0
-        
+
+
 if __name__ == '__main__':
     exit(main())
