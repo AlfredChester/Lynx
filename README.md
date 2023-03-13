@@ -1,6 +1,6 @@
 # Testdata-Generator
 
-A testdata generator repository powered by 
+A testdata generator and comparer repository powered by 
 <a href="https://github.com/luogu-dev/cyaron/">Cyaron</a>
 
 ### 1. Testdata Generator
