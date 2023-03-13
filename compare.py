@@ -40,7 +40,7 @@ def compile_source(name: str) -> int:
     return system(cmd)
 
 
-def main() -> int:
+def main(*args, **kwargs) -> int:
     run_set = 1
     compile_source(to_cmp)
     compile_source(std)
