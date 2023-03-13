@@ -21,6 +21,7 @@ In `Config.py`, you need to rewrite the method Gen.generator, It should do one o
     1) Return a str with testdata, for example:
 
 ```python
+
 def generator(data_group: int, io: IO) -> str: 
         return '114514'
 ```
