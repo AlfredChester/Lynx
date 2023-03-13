@@ -1,3 +1,7 @@
+"""
+General Toolset library
+"""
+
 from cyaron import *
 from typing import *
 from string import *
