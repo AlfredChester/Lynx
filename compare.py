@@ -1,8 +1,9 @@
-from sys import argv
-from os import system
 from importlib import import_module
+from os import system
 
 from cyaron import *
+
+from libs.glib import args as argv
 
 print('Usage: python compare.py {Data Generator} {program1} {program2}')
 print(f'Argv: {argv}')
@@ -40,7 +41,7 @@ def compile_source(name: str) -> int:
     return system(cmd)
 
 
-def main(*args, **kwargs) -> int:
+def main() -> int:
     run_set = 1
     compile_source(to_cmp)
     compile_source(std)
