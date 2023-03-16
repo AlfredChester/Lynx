@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 # version 2 Config Template
-from cyaron import *  # cyaron
-from libs.glib import ToolSet  # Toolset
+from cyaron    import *         # cyaron
+from libs.glib import ToolSet   # ToolSet
 
 # Constant Definitions
 version = '2.0.0'
@@ -17,8 +17,6 @@ genOut = False  # Generate Output in Gen.generator
 # Gen class
 class Gen:
     class static:
-        INT_MAX = (1 << 31) - 1
-        INT_MIN = -(1 << 31)
         pass
 
     class functions:
@@ -31,6 +29,6 @@ class Gen:
     #  See https://github.com/luogu-dev/cyaron/wiki/输入输出-IO
     @staticmethod
     def generator(io: IO) -> None:
-        a = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
-        b = randint(Gen.static.INT_MIN, Gen.static.INT_MAX)
+        a = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
+        b = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         io.input_writeln(a, b)
