@@ -68,4 +68,4 @@ generator_example\
 
 ### 2. Comparer
 
-Using the comparer, you can compare the two programs
+Using the comparer, you can compare the two programs quickly
