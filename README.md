@@ -1,7 +1,7 @@
 # Testdata-Generator
 
-A testdata generator and comparer repository powered by 
-<a href="https://github.com/luogu-dev/cyaron/">Cyaron</a>
+A testdata generator and comparer repository powered by
+`<a href="https://github.com/luogu-dev/cyaron/">`Cyaron`</a>`
 
 ### 1. Testdata Generator
 
@@ -66,7 +66,6 @@ generator_example\
   |- generator_example.zip
 ```
 
-
 ### 2. Comparer
 
-Using the comparer, you can compare the two programs fast
+Using the comparer, you can compare the two programs
