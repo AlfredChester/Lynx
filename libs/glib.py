@@ -1,11 +1,15 @@
 """
-General Toolset library
+General Library
 """
 
 from cyaron import *
 from typing import *
 from string import *
+from sys    import argv
 
+args = argv
+if len(argv) == 0 or (not argv[0].endswith('.py')):
+    args = [''] + args
 
 class ToolSet:
     INT_MAX = (1 << 31) - 1
