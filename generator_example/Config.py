@@ -20,7 +20,6 @@ class Gen:
         pass
 
     class functions:
-        # functions
         pass
 
     # gen.generator:
@@ -28,7 +27,7 @@ class Gen:
     #  directly write input data to io
     #  See https://github.com/luogu-dev/cyaron/wiki/输入输出-IO
     @staticmethod
-    def generator(io: IO) -> None:
+    def generator(data_group: int, io: IO) -> None:
         a = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         b = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         io.input_writeln(a, b)
