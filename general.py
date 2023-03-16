@@ -1,9 +1,10 @@
 from importlib import import_module
-from os import system, listdir
-from sys import argv
+from os import listdir, system
 from zipfile import *
 
 from cyaron import *
+
+from libs.glib import args as argv
 
 try:
     root = argv[1]
@@ -44,7 +45,7 @@ def compile_source() -> int:
     return system(cmd)
 
 
-def main(*args, **kwargs) -> int:
+def main() -> int:
     if not useConfigGen:
         retval = compile_source()
         if retval != 0:
