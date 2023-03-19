@@ -75,4 +75,4 @@ Usage: `python compare.py {Data Generator} {program1} {program2}`
 
 Using spj checker, you can spj your std
 
-Usage: Usage: python spj_checker.py {Data Generator} {spj_program} {tested_program}
+Usage: `python spj_checker.py {Data Generator} {spj_program} {tested_program}`
