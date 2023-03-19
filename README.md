@@ -1,7 +1,6 @@
-# Testdata-Generator
+# Testdata-Tools
 
-A testdata generator and comparer repository powered by
-`<a href="https://github.com/luogu-dev/cyaron/">`Cyaron`</a>`
+A testdata toolset repository powered by `<a href="https://github.com/luogu-dev/cyaron/">`Cyaron `</a>`
 
 ### 1. Testdata Generator
 
@@ -69,3 +68,11 @@ generator_example\
 ### 2. Comparer
 
 Using the comparer, you can compare the two programs quickly
+
+Usage: `python compare.py {Data Generator} {program1} {program2}`
+
+### 3. SPJ Checker
+
+Using spj checker, you can spj your std
+
+Usage: Usage: python spj_checker.py {Data Generator} {spj_program} {tested_program}
