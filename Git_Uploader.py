@@ -71,7 +71,7 @@ class Main:
     def isDeny(response: str, Default: str) -> bool:
         return response == 'N' or response == 'n' or (response == '' and Default == 'n')
 
-    def main() -> None:
+    def main(*args, **kwargs) -> None:
         logger.add("./Uploader_log/file-{time:YYYY-MM-DD}.log", retention="1 day")
         logger.info("欢迎来到Git上传工具 v2.0")
         # 首先检查当前的分支:
