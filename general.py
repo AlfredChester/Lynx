@@ -45,7 +45,7 @@ def compile_source() -> int:
     return system(cmd)
 
 
-def main() -> int:
+def main(*args, **kwargs) -> int:
     if not useConfigGen:
         retval = compile_source()
         if retval != 0:
