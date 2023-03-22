@@ -1,6 +1,6 @@
 # Testdata-Tools
 
-A testdata toolset repository powered by `<a href="https://github.com/luogu-dev/cyaron/">`Cyaron `</a>`
+A testdata toolset repository powered by [Cyaron](https://github.com/luogu-dev/cyaron/)
 
 ### 1. Testdata Generator
 
