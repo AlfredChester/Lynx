@@ -6,6 +6,7 @@ from cyaron import *
 from libs.glib import args as argv
 
 print('Usage: python compare.py {Data Generator} {program1} {program2}')
+print('       {(Optional) Number of runs}')
 print(f'Argv: {argv}')
 try:
     root = argv[1]
@@ -22,6 +23,14 @@ try:
     print(f"To_cmp: {to_cmp}, std: {std}")
 except IndexError:
     print("To_cmp or std lost, compare terminated")
+    exit(0)
+
+try:
+    number_of_runs = int(argv[4])
+except IndexError:
+    number_of_runs = 11 ** 4514
+except:
+    print("Illegal Argument(s)")
     exit(0)
 
 print('Problem Root:', root)
@@ -47,7 +56,7 @@ def main(*args, **kwargs) -> int:
     compile_source(std)
     to_cmp_exe = './' + to_cmp + '.exe'
     std_exe = './' + std + '.exe'
-    while True:
+    while run_set <= number_of_runs:
         input_io = IO("test.in", "test.out")
         if Config.version.split('.')[0] == '1':
             input_io.input_write(Config.generator(Config.data_set))
