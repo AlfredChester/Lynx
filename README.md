@@ -69,10 +69,10 @@ generator_example\
 
 Using the comparer, you can compare the two programs quickly
 
-Usage: `python compare.py {Data Generator} {program1} {program2}`
+Usage: `python compare.py {Data Generator} {program1} {program2} {(Optional) Number of runs}`
 
 ### 3. SPJ Checker
 
 Using spj checker, you can spj your std
 
-Usage: `python spj_checker.py {Data Generator} {spj_program} {tested_program}`
+Usage: `python spj_checker.py {Data Generator} {spj_program} {tested_program} {(Optional) Number of runs}`
