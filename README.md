@@ -1,8 +1,8 @@
-# Testdata-Tools
+# Testcase-Tools
 
-A testdata toolset repository powered by [Cyaron](https://github.com/luogu-dev/cyaron/)
+A testcase toolset repository powered by [Cyaron](https://github.com/luogu-dev/cyaron/)
 
-### 1. Testdata Generator
+### 1. Testcase Generator
 
 First, you need to create a folder to save all the files needed for a problem, for example, I created `generator_example\`
 
@@ -18,7 +18,7 @@ generator_example\
 
 In `Config.py`, you need to rewrite the method `Gen.generator`, It should do one of the two things:
 
-    1) Return a str with testdata, for example:
+    1) Return a str of testcase input, for example:
 
 ```python
 from cyaron import *
@@ -28,7 +28,7 @@ class Gen:
         return '114514'
 ```
 
-    2) Write testdata to io (which is recommended), for example:
+    2) Write testcase data to`io` (which is recommended), for example:
 
 ```python
 from cyaron import *
@@ -50,7 +50,7 @@ It is optional to have a directory with no `std.cpp` inside and enables `genOut`
 
 Then, run the command `python general.py {folder_name}`
 
-Finally, the testdata will be auto generated and zipped, the folder will be looked like:
+Finally, the testcase will be auto generated and zipped, the folder will be looked like:
 
 ```
 generator_example\
