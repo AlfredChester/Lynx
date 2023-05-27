@@ -46,7 +46,7 @@ int spj(FILE *input, FILE *user_output){
         - If the answer is wrong, return WA
         - If you actively capture your own errors, 
           such as memory allocation failure, return ERROR
-      Please complete the function on your own.
+      Please complete the function.
       demo:
       int a, b;
       while(fscanf(user_output, "%d %d", &a, &b) != EOF){
