@@ -1,6 +1,10 @@
 # Testcase-Tools
 
+[中文帮助指南](./README_CN.md)
+
 A testcase toolset repository powered by [Cyaron](https://github.com/luogu-dev/cyaron/)
+
+Preparation: run `pip install -r requirements.txt`
 
 ### 1. Testcase Generator
 
@@ -46,7 +50,7 @@ In `std.cpp`, you just need to write a standard program which can solve the prob
 
 **You don't need to redirect stdin or stdout**
 
-It is optional to have a directory with no `std.cpp` inside and enables `genOut` which is still an experimental function
+It is optional to have a directory with no `std.cpp` inside and enables `genOut` meanwhile writing outputs in `Gen.generator` which is still an experimental function
 
 Then, run the command `python general.py {folder_name}`
 
