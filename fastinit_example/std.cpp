@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 typedef long long ll;
 using namespace std;
-template <typename _Tp> 
+template <typename _Tp>
 inline void read(_Tp &x) {
-    char c = getchar(); bool f = x = 0;
+    char c = getchar();
+    bool f = x = 0;
     while (c < '0' || c > '9') {
         f = (c == '-'), c = getchar();
     }
@@ -14,6 +15,6 @@ inline void read(_Tp &x) {
 }
 
 int main(int argc, char const *argv[]) {
-    
+
     return 0;
 }
