@@ -9,15 +9,15 @@
 1. 运行 `pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`
 
 2. 创建一个文件夹来保存问题所需的所有文件，例如，我创建了 `generator_example\`
-你需要在此目录中放置两个文件：`Config.py`和 `std.cpp`
-你需要这样放置它们：
-      ```
-      generator_example\
-        |- Config.py
-        |- std.cpp
-      ```
-        并且分别复制 `Config_template.py`和 `std_template.cpp`的内容到 `Config.py`与 `std.cpp`中
-        或者你可以使用命令 `python FastInit.py {路径名称}`来快速初始化一个问题目录, 例如: `python FastInit.py fastinit_example`
+  你需要在此目录中放置两个文件：`Config.py`和 `std.cpp`
+  你需要这样放置它们：
+  ```
+  generator_example\
+    |- Config.py
+    |- std.cpp
+  ```
+  并且分别复制 `Config_template.py`和 `std_template.cpp`的内容到 `Config.py`与 `std.cpp`中
+  或者你可以使用命令 `python FastInit.py {路径名称}`来快速初始化一个问题目录, 例如: `python FastInit.py fastinit_example`
 
 3. 自定义Config.py
   在 `Config.py`中，您需要自定义方法 `Gen.generator`，它应该做以下两件事之一：
@@ -105,5 +105,7 @@
 
   用例2：`python compare.py generator_example spj_example/spj.cpp spj_example/to_test_1.cpp 100`
   此用例为spj程序直到发生错误或答案不正确或超出运行次数限制(100次)
+
+  关于如何写spj: [戳我](https://opensource.qduoj.com/#/onlinejudge/guide/special_judge)
 
   **注意: 此处的程序路径为相对路径**
