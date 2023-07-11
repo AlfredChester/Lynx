@@ -133,3 +133,7 @@ dmypy.json
 # ide
 .idea/
 .vscode/
+
+# cpp runtime stuff
+*.dSYM/
+Uploader_log/
