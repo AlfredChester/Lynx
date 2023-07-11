@@ -40,8 +40,8 @@ int spj(FILE *input, FILE *user_output) {
     /*
       https://opensource.qduoj.com/#/onlinejudge/guide/special_judge
       parameter:
-        - inputï¼ŒThe FILE pointer of input file
-        - user_outputï¼ŒThe FILE pointer of user's output
+        - input£¬The FILE pointer of input file
+        - user_output£¬The FILE pointer of user's output
       return:
         - If the answer is correct, return AC
         - If the answer is wrong, return WA
