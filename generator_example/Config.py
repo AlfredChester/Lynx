@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 # version 2 Config Template
-from cyaron    import *         # cyaron
+from cyaron import *         # cyaron
 from libs.glib import ToolSet   # ToolSet
 
 # Constant Definitions
@@ -28,6 +28,7 @@ class Gen:
     #  See https://github.com/luogu-dev/cyaron/wiki/输入输出-IO
     @staticmethod
     def generator(data_group: int, io: IO) -> None:
+        # A+B problem, generate two integers in range of int
         a = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         b = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         io.input_writeln(a, b)
