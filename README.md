@@ -86,7 +86,7 @@ A testcase toolset repository powered by [Cyaron](https://github.com/luogu-dev/c
     |- generator_example.zip
 ```
 
-## 2. comparator
+## 2. Comparator
 
   Using the comparator, you can compare the output of two cpp codes with the same data
 
