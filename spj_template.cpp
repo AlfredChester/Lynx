@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
 
 #define AC 0
 #define WA 1
@@ -12,7 +12,7 @@ void close_file(FILE *f) {
     }
 }
 
-int main(int argc, char *args[]) {
+int main(int argc, const char *args[]) {
     FILE *input = NULL, *user_output = NULL;
     int result;
     if (argc != 3) {
@@ -36,25 +36,26 @@ int main(int argc, char *args[]) {
     return result;
 }
 
+using namespace std;
 int spj(FILE *input, FILE *user_output) {
     /*
-      https://opensource.qduoj.com/#/onlinejudge/guide/special_judge
       parameter:
-        - input£¬The FILE pointer of input file
-        - user_output£¬The FILE pointer of user's output
+        - inputï¼ŒThe FILE pointer of input file
+        - user_outputï¼ŒThe FILE pointer of user's output
       return:
         - If the answer is correct, return AC
         - If the answer is wrong, return WA
         - If you actively capture your own errors,
           such as memory allocation failure, return ERROR
-      Please complete the function.
+      Please complete the function on your own.
       demo:
       int a, b;
       while(fscanf(user_output, "%d %d", &a, &b) != EOF){
-          if (a - b != 3) {
+          if(a - b != 3){
               return WA;
           }
       }
       return AC;
     */
+    return AC;
 }
