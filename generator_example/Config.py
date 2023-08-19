@@ -1,33 +1,54 @@
 # encoding: utf-8
 
 # version 2 Config Template
-from cyaron import *         # cyaron
-from libs.glib import ToolSet   # ToolSet
+from cyaron import *
+from typing import *
+from string import *
 
 # Constant Definitions
-version = '2.0.0'
+version = '2.2.0'
+data_set = 20
 std_name = 'std.cpp'
-data_set = 10
+validator = 'validator.cpp'
+cmd = 'g++ -O3 -g -m64 -std=c++14 -Wall -o {}/std.exe {}'
 
 # Experimental Function
 no_gen = False
-genOut = False  # Generate Output in Gen.generator
+genOut = False    # Generate Output in Gen.generator
+
+# Tool Set
 
 
-# Gen class
+class ToolSet:
+    INT_MIN = -2147483648
+    INT_MAX = 2147483647
+    general_mod = int(1e9 + 7)
+
+    def genRandVector(io: IO, len, data_range, allow_same=True):
+        if isinstance(data_range, int):
+            data_range = (0, data_range)
+        to_write = Vector.random(len, [data_range], int(allow_same))
+        for item in to_write:
+            io.input_write(item)
+        io.input_writeln()
+
+    def genRandStr(siz: int, gen_src=ascii_letters) -> str:
+        ret = ''
+        for _ in range(siz):
+            ret += choice(gen_src)
+        return ret
+
+
 class Gen:
     class static:
+        # static vars
         pass
 
     class functions:
+        # functions
         pass
 
-    # gen.generator:
-    #  param: data_group -> which data is being generated
-    #  directly write input data to io
-    #  See https://github.com/luogu-dev/cyaron/wiki/输入输出-IO
-    @staticmethod
-    def generator(data_group: int, io: IO) -> None:
+    def generator(data_group: int, io: IO) -> Optional[str]:
         # A+B problem, generate two integers in range of int
         a = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
         b = randint(ToolSet.INT_MIN, ToolSet.INT_MAX)
