@@ -1,3 +1,4 @@
 loguru
 parse
 cyaron
+tqdm
