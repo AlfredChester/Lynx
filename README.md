@@ -122,6 +122,6 @@ A testcase toolset repository powered by [Cyaron](https://github.com/luogu-dev/c
   
   This use case is to spj a program until an error occurs or the answer is incorrect or the running times limit is exceeded (100 times)
 
-  About how to write an spj: [Click Here](https://opensource.qduoj.com/#/onlinejudge/guide/special_judge)
+  About how to write a spj: [Click Here](https://opensource.qduoj.com/#/onlinejudge/guide/special_judge)
 
   **Note: The program path here is relative**
