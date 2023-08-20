@@ -137,3 +137,7 @@ dmypy.json
 # cpp runtime stuff
 *.dSYM/
 Uploader_log/
+
+*.in
+
+*.out
