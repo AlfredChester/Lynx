@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
-#define AC 0
-#define WA 1
+#define AC    0
+#define WA    1
 #define ERROR -1
 
 int spj(FILE *input, FILE *std_output, FILE *user_output);
@@ -38,7 +38,9 @@ int main(int argc, const char *args[]) {
     close_file(std_output);
     return result;
 }
+
 using namespace std;
+
 int spj(FILE *input, FILE *std_output, FILE *user_output) {
     /*
       parameter:
