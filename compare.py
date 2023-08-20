@@ -48,18 +48,25 @@ except FileNotFoundError:
 print('Read Config v' + Config.version)
 
 
+def eraseSuffix(file: str) -> str:
+    retval = ''
+    for name in file.split('.')[:-1]:
+        retval += name + '.'
+    return retval[:-1]
+
+
 def compile_source(name: str) -> int:
-    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {name}.exe {name}"
+    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {eraseSuffix(name)}.exe {name}"
     print("Compile cmd: ", cmd)
     return system(cmd)
 
 
 def main(*args, **kwargs) -> int:
     run_set = 1
-    compile_source(to_cmp)
     compile_source(std)
-    to_cmp_exe = './' + to_cmp + '.exe'
-    std_exe = './' + std + '.exe'
+    compile_source(to_cmp)
+    std_exe = f'./{eraseSuffix(std)}.exe'
+    to_cmp_exe = f'./{eraseSuffix(to_cmp)}.exe'
     while run_set != number_of_runs + 1:
         input_io = IO("test.in", "test.out")
         if Config.version.split('.')[0] == '1':
