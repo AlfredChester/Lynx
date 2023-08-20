@@ -3,7 +3,7 @@ from os import system
 
 from cyaron import *
 
-from sys import argv
+from sys import argv, exit
 
 if argv[0].startswith('python'):
     argv = argv[1:]
@@ -16,8 +16,8 @@ print(f'Argv: {argv}')
 try:
     root = argv[1]
 except IndexError:
-    print("No Problem Id given, compare terminated")
-    exit(0)
+    print("No Problem Id given, check terminated.")
+    exit(1)
 
 if root.startswith('.\\') or root.startswith('./'):
     root = root[2:]
@@ -27,24 +27,24 @@ try:
     to_test = argv[3]
     print(f"spj: {spj}, to_test: {to_test}")
 except IndexError:
-    print("spj or to_test lost, compare terminated")
-    exit(0)
+    print("Special Judge or to_test not found, check terminated.")
+    exit(1)
 
 try:
     number_of_runs = int(argv[4])
 except IndexError:
     number_of_runs = -1
 except:
-    print("Illegal Argument(s)")
-    exit(0)
+    print("Illegal number of runs. check terminated.")
+    exit(1)
 
 print('Problem Root:', root)
 moduleRoot = root.replace('/', '.')
 try:
     Config = import_module(moduleRoot + '.Config')
 except FileNotFoundError:
-    print('No Config.py found, please check the directory')
-    exit(0)
+    print('No Config.py found, please check the directory.')
+    exit(1)
 
 print('Read Config v' + Config.version)
 
@@ -66,7 +66,7 @@ def main(*args, **kwargs) -> int:
     compile_source(to_test)
     spj_exe = './' + spj + '.exe'
     to_test_exe = './' + to_test + '.exe'
-    while run_set != number_of_runs:
+    while run_set != number_of_runs + 1:
         input_io = IO("test.in", "test.out")
         if Config.version.split('.')[0] == '1':
             input_io.input_write(Config.generator(Config.data_set))
