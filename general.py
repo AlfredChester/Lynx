@@ -1,6 +1,6 @@
 from importlib import import_module
 from os import listdir, system
-from sys import argv
+from sys import argv, exit
 from zipfile import *
 
 from cyaron import *
@@ -13,7 +13,7 @@ try:
     root = argv[1]
 except IndexError:
     print("No Problem Id given, data generation terminated")
-    exit(0)
+    exit(1)
 
 if root.startswith('.\\') or root.startswith('./'):
     root = root[2:]
@@ -28,7 +28,7 @@ except Exception:
         system(f'python3 ./{moduleRoot}/gen.py')
     else:
         print('No Config.py or gen.py found, please check the directory')
-    exit(0)
+    exit(1)
 
 print('Read Config v' + Config.version)
 
