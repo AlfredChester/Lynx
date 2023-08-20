@@ -18,8 +18,12 @@ def writeFile(fileName: str, content: str) -> None:
 
 
 def main() -> int:
+    if sys.argv[0].startswith('python'):
+        argv = sys.argv[1:]
+    else:
+        argv = sys.argv
     try:
-        folderName = sys.argv[1]
+        folderName = argv[1]
     except Exception:
         print("Folder name not given. Initialization terminated.")
         return 0
@@ -31,7 +35,7 @@ def main() -> int:
     writeFile(os.path.join(folderName, 'std.cpp'), std_temp)
     writeFile(os.path.join(folderName, 'Config.py'), conf_temp)
     writeFile(os.path.join(folderName, 'validator.cpp'), val_temp)
-    if len(sys.argv) == 3 and sys.argv[2] == 'spj':
+    if len(argv) == 3 and sys.argv[2] == 'spj':
         writeFile(os.path.join(folderName, 'spj.cpp'), spj_temp)
     return 0
 
