@@ -63,7 +63,7 @@ def compileCpp() -> int:
     return system(cmd)
 
 
-def main() -> int:
+def main(*args, **kwargs) -> int:
     if not useConfigGen:
         retval = compileCpp()
         if retval != 0:
