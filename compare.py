@@ -3,11 +3,15 @@ from os import system
 
 from cyaron import *
 
-from libs.glib import args as argv
+from sys import argv
+
+if argv[0].startswith('python'):
+    argv = argv[1:]
 
 print('Usage: python compare.py {Data Generator} {program1} {program2}')
 print('       {(Optional) Number of runs}')
 print(f'Argv: {argv}')
+
 try:
     root = argv[1]
 except IndexError:
