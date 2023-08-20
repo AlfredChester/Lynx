@@ -3,9 +3,14 @@ from os import system
 
 from cyaron import *
 
-from libs.glib import args as argv
+from sys import argv
 
-print('Usage: python spj_checker.py {Data Generator} {spj_program} {tested_program}')
+if argv[0].startswith('python'):
+    argv = argv[1:]
+
+print(
+    'Usage: python spj_checker.py {Data Generator} {spj_program} {tested_program}'
+)
 print('       {(Optional) Number of runs}')
 print(f'Argv: {argv}')
 try:
@@ -28,7 +33,7 @@ except IndexError:
 try:
     number_of_runs = int(argv[4])
 except IndexError:
-    number_of_runs = 11 ** 4514
+    number_of_runs = -1
 except:
     print("Illegal Argument(s)")
     exit(0)
@@ -48,6 +53,7 @@ try:
 except AttributeError:
     useConfigGen = False
 
+
 def compile_source(name: str) -> int:
     cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {name}.exe {name}"
     print("Compile cmd: ", cmd)
@@ -60,7 +66,7 @@ def main(*args, **kwargs) -> int:
     compile_source(to_test)
     spj_exe = './' + spj + '.exe'
     to_test_exe = './' + to_test + '.exe'
-    while run_set <= number_of_runs:
+    while run_set != number_of_runs:
         input_io = IO("test.in", "test.out")
         if Config.version.split('.')[0] == '1':
             input_io.input_write(Config.generator(Config.data_set))
