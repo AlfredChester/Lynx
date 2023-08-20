@@ -54,8 +54,15 @@ except AttributeError:
     useConfigGen = False
 
 
+def eraseSuffix(file: str) -> str:
+    retval = ''
+    for name in file.split('.')[:-1]:
+        retval += name + '.'
+    return retval[:-1]
+
+
 def compile_source(name: str) -> int:
-    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {name}.exe {name}"
+    cmd = f"g++ -O3 -g -m64 -std=c++14 -Wall -o {eraseSuffix(name)}.exe {name}"
     print("Compile cmd: ", cmd)
     return system(cmd)
 
@@ -64,8 +71,8 @@ def main(*args, **kwargs) -> int:
     run_set = 1
     compile_source(spj)
     compile_source(to_test)
-    spj_exe = './' + spj + '.exe'
-    to_test_exe = './' + to_test + '.exe'
+    spj_exe = f'./{eraseSuffix(spj)}.exe'
+    to_test_exe = f'./{eraseSuffix(to_test)}.exe'
     while run_set != number_of_runs + 1:
         input_io = IO("test.in", "test.out")
         if Config.version.split('.')[0] == '1':
