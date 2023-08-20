@@ -17,7 +17,7 @@ def writeFile(fileName: str, content: str) -> None:
     file.close()
 
 
-def main() -> int:
+def main(*args, **kwargs) -> int:
     if sys.argv[0].startswith('python'):
         argv = sys.argv[1:]
     else:
@@ -26,7 +26,7 @@ def main() -> int:
         folderName = argv[1]
     except Exception:
         print("Folder name not given. Initialization terminated.")
-        return 0
+        return 1
     os.system('mkdir ' + folderName)
     std_temp = readFile('std_template.cpp')
     spj_temp = readFile('spj_template.cpp')
