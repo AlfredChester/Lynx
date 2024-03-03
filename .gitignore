@@ -142,3 +142,5 @@ Uploader_log/
 
 *.out
 *.exe
+
+.DS_Store
