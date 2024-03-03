@@ -144,3 +144,5 @@ Uploader_log/
 *.exe
 
 .DS_Store
+
+Git_Uploader.py
