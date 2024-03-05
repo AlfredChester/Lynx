@@ -1,2 +1,1 @@
-def generator() -> None:
-    print('kkksc03')
+def generator() -> None: ...
