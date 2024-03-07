@@ -13,6 +13,7 @@ class Language(object):
 
     def compileToExecutive(self, source: str, std: str, args: list) -> str:
         """Compiles the source code to executive.
+
         Args:
             source: (str) The absolute route of the source.
             std: (str) The name of language standard.
@@ -30,6 +31,7 @@ class CPP(Language):
 
     def compileToExecutive(self, source: str, std: str, args: list) -> str:
         """Compiles the cpp source code to executive.
+
         Args:
             source: (str) The absolute route of the source.
             std: (str) The name of language standard.
@@ -37,6 +39,7 @@ class CPP(Language):
         Returns:
             The absolute route of executive.
         """
+        raise NotImplementedError()
 
 
 def getLanguage(source: str) -> str:
@@ -50,11 +53,11 @@ def getLanguage(source: str) -> str:
     raise LanguageDeterminationError()
 
 
-def compile(source: str, language: Optional[str], std: str, args: list) -> int:
+def compile(source: str, language: Optional[str], std: str, args: list) -> str:
     if language is None:
         language = getLanguage(source)
     if language == "cpp":
-        CPP().compileToExecutive(source)
+        return CPP().compileToExecutive(source, std, args)
     else:
         raise NotImplementedError(
             f"{language} has not been supported yet. Please start an issue if you need."
