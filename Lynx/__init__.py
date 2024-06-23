@@ -19,7 +19,7 @@
 # SOFTWARE.
 
 import fire
-from modules.generate import generate
+from .modules.generate import generate
 
 if __name__ == "__main__":
     fire.Fire({"generate": generate})
