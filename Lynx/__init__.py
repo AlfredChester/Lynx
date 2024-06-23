@@ -1,4 +1,4 @@
-# Copyright (c) 2023 FredB-mine
+# Copyright (c) 2023-present FredB-mine
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,7 +19,9 @@
 # SOFTWARE.
 
 import fire
-from .modules.generate import generate
+from modules.generate import Generate
+from modules.compare import Compare
+from modules.init import Init
 
 if __name__ == "__main__":
-    fire.Fire({"generate": generate})
+    fire.Fire({"generate": Generate, "compare": Compare, "init": Init})
