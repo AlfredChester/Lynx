@@ -1,6 +1,3 @@
-suffix_of_language = {"cpp": [".cpp", ".cxx", ".cc", ".c++", ".C"], "rust": [".rc"]}
-
-
 class LanguageDeterminationError(Exception):
     """Exception used when the language of given source cannot be determined."""
 

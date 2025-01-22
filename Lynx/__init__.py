@@ -18,10 +18,16 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import fire
-from modules.generate import Generate
-from modules.compare import Compare
-from modules.init import Init
+import click
 
-if __name__ == "__main__":
-    fire.Fire({"generate": Generate, "compare": Compare, "init": Init})
+
+# register CLI group
+@click.group()
+def cli():
+    """lynx: Next generation testcase tool set for OI / ACM contests."""
+    pass
+
+
+import Lynx.modules.generate
+import Lynx.modules.compare
+import Lynx.modules.init

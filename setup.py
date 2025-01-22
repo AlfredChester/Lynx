@@ -1,16 +1,21 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 from setuptools import setup, find_packages
 
 setup(
-    name="Lynx",
+    name="lynx",
     version="2.0.1-beta",
     keywords="olympic informatics testcase testcase-tools tools",
-    description="Lynx: Next generation high performance testcase tool set for OI / ACM contests. - 新一代信息学竞赛数据生成工具集",
+    description="lynx: Next generation high performance testcase tool set for OI / ACM contests. - 新一代信息学竞赛数据生成工具集",
     license="MIT",
-    author="ABOJ Development Team",
-    author_email="abonlinejudge@163.com",
+    py_modules=["Lynx"],
+    author="AlfredChester",
+    author_email="fredbao1126@gmail.com",
     packages=find_packages(),
     include_package_data=True,
     platforms="any",
-    install_requires=["fire", "cyaron", "tqdm"],
+    install_requires=["Click", "cyaron", "tqdm"],
+    entry_points="""
+        [console_scripts]
+        lynx=Lynx:cli
+    """,
 )

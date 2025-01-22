@@ -1,9 +1,11 @@
-from utils.compile.language import Language
+from Lynx.utils.compile.language import Language
+
+allowed_standards = ["c++98", "c++03", "c++11", "c++14", "c++17"]
 
 
 class Cpp(Language):
     def __init__(self) -> None:
-        standards = ["c++98", "c++03", "c++11", "c++14", "c++17"]
+        standards = allowed_standards
         super().__init__(standards)
 
     def getEnvironment(self) -> None: ...
