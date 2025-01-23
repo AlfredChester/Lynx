@@ -1,16 +1,15 @@
 from Lynx.utils.compile.language import Language
-
-allowed_standards = ["c++98", "c++03", "c++11", "c++14", "c++17"]
+from Lynx.utils.constants import ALLOWED_STANDARDS
 
 
 class Cpp(Language):
     def __init__(self) -> None:
-        standards = allowed_standards
+        standards = ALLOWED_STANDARDS
         super().__init__(standards)
 
-    def getEnvironment(self) -> None: ...
+    def get_environment(self) -> None: ...
 
-    def compileToExecutive(self, source: str, std: str, args: list) -> str:
+    def compile_to_executive(self, source: str, std: str, args: list) -> str:
         """Compiles the cpp source code to executive.
 
         Args:
