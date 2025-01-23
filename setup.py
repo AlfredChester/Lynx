@@ -1,6 +1,8 @@
 # !/usr/bin/env python
 from setuptools import setup, find_packages
 
+packages = find_packages()
+
 setup(
     name="lynx",
     version="2.0.1b0",
@@ -10,7 +12,7 @@ setup(
     py_modules=["Lynx"],
     author="AlfredChester",
     author_email="fredbao1126@gmail.com",
-    packages=find_packages(),
+    packages=packages,
     include_package_data=True,
     platforms="any",
     install_requires=["Click", "cyaron", "tqdm"],

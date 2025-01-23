@@ -16,6 +16,9 @@ up:
 deps:
 	pipenv install
 
+lock:
+	pipenv lock
+
 _check:
 	python setup.py check
 check: deps _build _check

@@ -5,6 +5,9 @@
  *
  * So you can use the built-in io functions in testlib.h
  * to write your validator.
+ *
+ * You can just leave it empty if you don't need to check the output.
+ * Just remember to specify --no-validator when generating in that case.
  */
 #include "testlib.h"
 

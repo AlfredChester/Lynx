@@ -3,7 +3,7 @@ import os
 import Lynx.utils.config as config
 
 from Lynx import cli
-from Lynx.utils.compile import cpp
+from Lynx.utils.language import cpp
 
 
 @cli.command()
@@ -13,6 +13,13 @@ from Lynx.utils.compile import cpp
 @click.option(
     "--testcase", type=int, default=0, help="The index of the testcase to compare."
 )
+# checker will be supported in the future when cyaron implements it.
+# @click.option(
+#     "--checker",
+#     is_flag=True,
+#     default=False,
+#     help="Use checker (special judge).",
+# )
 def compare(problem, program1, program2, testcase):
     """This command compares two programs using a lynx problem description.
 
@@ -22,6 +29,4 @@ def compare(problem, program1, program2, testcase):
 
     PROGRAM2 is the second program to compare with, it is set to the standard solution to the problem by default.
     """
-    if testcase == 0:
-        # compare the last testcase
-        pass
+    pass
