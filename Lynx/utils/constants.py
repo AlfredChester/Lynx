@@ -5,8 +5,10 @@ LYNX_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_ROOT = os.path.join(LYNX_ROOT, "templates")
 CPP_TEMPLATES_ROOT = os.path.join(TEMPLATES_ROOT, "cpp")
 
+# Standards
 CPP_STANDARDS = ["c++98", "c++03", "c++11", "c++14", "c++17"]
 
+# Testlib checkers and validators
 CHECKERS = [
     "custom",
     "nyesno",
@@ -32,7 +34,6 @@ CHECKERS = [
     "uncmp",
     "caseicmp",
 ]
-
 VALIDATORS = [
     "custom",
     "validate-using-testset-and-group",
