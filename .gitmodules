@@ -1,3 +1,3 @@
-[submodule "Lynx/testlib"]
-	path = Lynx/testlib
+[submodule "testlib"]
+	path = testlib
 	url = https://github.com/MikeMirzayanov/testlib
