@@ -21,7 +21,7 @@
 import click
 
 
-# register CLI group
+# register CLI group, must be placed before importing submodules
 @click.group()
 def cli():
     """lynx: Next generation testcase tool set for OI / ACM contests."""

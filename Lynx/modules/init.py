@@ -1,4 +1,7 @@
 import click
+import os
+import Lynx.utils.config as config
+
 from Lynx import cli
 from Lynx.utils.compile import cpp
 
@@ -13,5 +16,5 @@ from Lynx.utils.compile import cpp
 )
 def init(problem, language):
     """This command initializes a lynx problem directory"""
-    print(type(problem), language)
+    # check if the problem directory exists
     pass
