@@ -1,0 +1,16 @@
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+cyaron = "*"
+tqdm = "*"
+PyYAML = "*"
+
+[dev-packages]
+autopep8 = "*"
+
+[requires]
+python_version = "3.12"

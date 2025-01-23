@@ -138,7 +138,12 @@ dmypy.json
 *.dSYM/
 Uploader_log/
 
+# testcase
 *.in
-
 *.out
-*.exe
+
+# macOS file
+.DS_Store
+
+# Git tool
+Git_Uploader.py
