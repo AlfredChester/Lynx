@@ -1,5 +1,4 @@
 import click
-from Lynx.utils.constants import VERBOSE
 
 
 def error(message: str) -> None:
@@ -15,5 +14,4 @@ def error_and_exit(message: str, code: int = 1) -> None:
 
 def debug(message: str) -> None:
     """Print a debug message."""
-    if VERBOSE:
-        click.echo(click.style(f"DEBUG: {message}", fg="blue"))
+    click.echo(click.style(f"DEBUG: {message}", fg="blue"))

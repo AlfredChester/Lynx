@@ -1,4 +1,5 @@
 import yaml
+import os
 
 
 # Used to manage the range of variables more easily
@@ -6,4 +7,12 @@ import yaml
 class SubtaskManager: ...
 
 
-def read_config(file_path: str) -> dict: ...
+class CppProblemConfig:
+    def __init__(self, problem_path: str):
+        self.problem_path = problem_path
+        self.problem_config_path = os.path.join(problem_path, "problem.yaml")
+        self.testdata_config_path = os.path.join(
+            problem_path, "testdata", "config.yaml"
+        )
+
+    def init_configs(self, standard, testcase, time_limit, memory_limit): ...

@@ -1,5 +1,7 @@
 import os
 
+VERSION = "2.0.1b2"
+
 # Some directories
 LYNX_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_ROOT = os.path.join(LYNX_ROOT, "templates")

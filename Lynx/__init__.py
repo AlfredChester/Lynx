@@ -19,10 +19,26 @@
 # SOFTWARE.
 
 import click
+from Lynx.utils.constants import VERSION
+
+
+def print_version(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    click.echo(VERSION)
+    ctx.exit()
 
 
 # register CLI group, must be placed before importing submodules
 @click.group()
+@click.option(
+    "--version",
+    is_flag=True,
+    is_eager=True,
+    expose_value=False,
+    callback=print_version,
+    help="Show the version of lynx.",
+)
 def cli():
     """lynx: Next generation testcase tool set for OI / ACM contests."""
     pass

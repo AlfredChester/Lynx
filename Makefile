@@ -35,3 +35,6 @@ _build:
 	rm -fR dist/
 	python setup.py sdist build
 build: deps _build
+
+publish: build
+	twine upload dist/*

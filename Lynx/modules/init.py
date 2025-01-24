@@ -28,7 +28,20 @@ from Lynx.utils.constants import CPP_STANDARDS, CHECKERS, VALIDATORS
     default="custom",
     help="Use a validator. You can also use the validator provided by testlib in a similar way as the checker.",
 )
-def init(problem, language, checker, validator):
+@click.option("--testcase", type=int, default=20, help="The number of testcases.")
+@click.option(
+    "--time-limit",
+    type=int,
+    default=1000,
+    help="The time limit of the problem, uses ms as unit.",
+)
+@click.option(
+    "--memory-limit",
+    type=int,
+    default=512,
+    help="The memory limit of the problem, uses MB as unit.",
+)
+def init(problem, language, checker, validator, testcase, time_limit, memory_limit):
     """This command initializes a lynx problem directory."""
     # Turn the problem path into an absolute path
     if not os.path.isabs(problem):
@@ -37,4 +50,8 @@ def init(problem, language, checker, validator):
     if os.path.exists(problem):
         error_and_exit(f"Problem directory {problem} already exists.")
     if language in CPP_STANDARDS:
-        cpp.init_problem(problem, language, checker, validator)
+        cpp.init_problem(
+            problem, language, checker, validator, testcase, time_limit, memory_limit
+        )
+    else:  # Other languages will be supported in the future
+        assert False  # This should never happen
