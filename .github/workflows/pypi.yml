@@ -1,25 +1,25 @@
 name: pypi
 on:
-    release:
-        types:
-            - created
+  release:
+    types:
+      - created
 jobs:
-    publish:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
-              with:
-                  python-version: "3.12"
-            - name: Install and configure pipenv
-              run: |
-                  pip install -U pip pipenv
-            - name: Install requirements
-              run: pipenv install
-            - name: Build dists
-              run: python setup.py sdist build
-            - name: Pypi Publish
-              uses: pypa/gh-action-pypi-publish@release/v1
-              with:
-                  user: __token__
-                  password: ${{ secrets.PYPI_API_TOKEN }}
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: Install and configure pipenv
+        run: |
+          pip install -U pip pipenv
+      - name: Install requirements
+        run: pipenv install
+      - name: Build dists
+        run: python setup.py sdist build
+      - name: Pypi Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}

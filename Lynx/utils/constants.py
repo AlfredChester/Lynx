@@ -4,6 +4,7 @@ VERSION = "2.0.1b2"
 
 # Some directories
 LYNX_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TESTLIB_ROOT = os.path.join(LYNX_ROOT, "..", "testlib")
 TEMPLATES_ROOT = os.path.join(LYNX_ROOT, "templates")
 CPP_TEMPLATES_ROOT = os.path.join(TEMPLATES_ROOT, "cpp")
 

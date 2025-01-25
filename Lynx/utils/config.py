@@ -15,4 +15,6 @@ class CppProblemConfig:
             problem_path, "testdata", "config.yaml"
         )
 
-    def init_configs(self, standard, testcase, time_limit, memory_limit): ...
+    def init_configs(
+        self, standard, testcase, time_limit, memory_limit, no_checker
+    ): ...

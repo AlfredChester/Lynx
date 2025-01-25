@@ -29,6 +29,7 @@ def init_problem(
     testcase: int,
     time_limit: int,
     memory_limit: int,
+    no_checker: bool,
 ):
     shutil.copytree(CPP_TEMPLATES_ROOT, problem_path)
     shutil.copyfile(
@@ -37,8 +38,14 @@ def init_problem(
     )
     os.remove(os.path.join(problem_path, "additional_file", ".gitkeep"))
     if checker != "custom":
-        ...
+        shutil.copy2(
+            os.path.join(TESTLIB_ROOT, "checkers", f"{checker}.cpp"),
+            os.path.join(problem_path, "programs", "checker.cpp"),
+        )
     if validator != "custom":
-        ...
+        shutil.copy2(
+            os.path.join(TESTLIB_ROOT, "validators", f"{validator}.cpp"),
+            os.path.join(problem_path, "programs", "validator.cpp"),
+        )
     config = CppProblemConfig(problem_path)
-    config.init_configs(standard, testcase, time_limit, memory_limit)
+    config.init_configs(standard, testcase, time_limit, memory_limit, no_checker)
