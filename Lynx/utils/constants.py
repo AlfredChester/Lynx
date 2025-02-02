@@ -1,6 +1,6 @@
 import os
 
-VERSION = "2.0.1b2"
+VERSION = "2.0.1b4"
 
 # Some directories
 LYNX_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
